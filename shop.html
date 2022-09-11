@@ -78,11 +78,8 @@
     <section class="main-content d-flex container">
         <main class="mt-4 mx-3 d-flex flex-column flex-grow-1">
             <ul class="nav nav-tabs">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Active</a>
-                </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Dropdown</a>
+                    <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Sort</a>
                     <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="#">Action</a></li>
                     <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -91,66 +88,8 @@
                     <li><a class="dropdown-item" href="#">Separated link</a></li>
                     </ul>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled">Disabled</a>
-                </li>
-                </ul>
-            <ul class="cards d-flex flex-wrap mt-2 container">
-                <li class="list-item card m-2 w-25">
-                    <img src="./images/programming photo.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Product title</h5>
-                    <p class="card-text">
-                        Best Quality product made with passion and love !
-                        <span class="text-success">
-                            <br><label class="productPrice">18</label>$
-                        </span>
-                    </p>
-                    <a href="#" class="btn btn-success">Add To cart</a>
-                    </div>
-                </li>
-                <li class="list-item card m-2 w-25">
-                    <img src="./images/programming photo.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Product title</h5>
-                    <p class="card-text">
-                        Best Quality product made with passion and love !
-                        <span class="text-success">
-                            <br><label class="productPrice">18</label>$
-                        </span>
-                    </p>
-                    <a href="#" class="btn btn-success">Add To cart</a>
-                    </div>
-                </li>
-                <li class="list-item card m-2 w-25">
-                    <img src="./images/programming photo.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Product title</h5>
-                    <p class="card-text">
-                        Best Quality product made with passion and love !
-                        <span class="text-success">
-                            <br><label class="productPrice">18</label>$
-                        </span>
-                    </p>
-                    <a href="#" class="btn btn-success">Add To cart</a>
-                    </div>
-                </li>
-                <li class="list-item card m-2 w-25">
-                    <img src="./images/programming photo.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                    <h5 class="card-title">Product title</h5>
-                    <p class="card-text">
-                        Best Quality product made with passion and love !
-                        <span class="text-success">
-                            <br><label class="productPrice">18</label>$
-                        </span>
-                    </p>
-                    <a href="#" class="btn btn-success">Add To cart</a>
-                    </div>
-                </li>
+               
+            <ul class="cards d-flex flex-wrap mt-2 container" id="shop-ul">
                 
             </ul>
             
@@ -178,5 +117,6 @@
         
       </ul>
     </footer>
+    <script type="module" src="./js/handlers/handleShopPage.js"></script>
 </body>
 </html>
