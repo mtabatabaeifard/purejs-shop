@@ -1,8 +1,10 @@
 import productData from "../../data/productData.js";
 import shopCards from "../components/shopCards.js";
+import toast from "../utils/toast.js";
+import handleAddToCart from "./handleAddToCart.js";
 
+const ul = document.querySelector("#shop-ul");
 function renderShopCards() {
-  const ul = document.querySelector("#shop-ul");
   productData().forEach((product) => {
     const cards = shopCards(
       product.id,
@@ -16,3 +18,15 @@ function renderShopCards() {
 }
   renderShopCards();
 
+  ul.addEventListener('click',(e)=>{
+    console.log(e.target);
+    if (e.target.innerText == "Add To cart") {
+      const toastHandleDiv = document.querySelector("#toast-handle");
+      toastHandleDiv.innerHTML+=(toast("alert","added to cart","show"));
+      setTimeout(() => {
+        toastHandleDiv.innerHTML = "";
+      }, 1000);
+      handleAddToCart(e.target.dataset.id);
+    }
+    
+  });

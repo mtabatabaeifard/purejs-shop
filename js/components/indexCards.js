@@ -1,6 +1,6 @@
 function indexCards(productID,productName,productDesc,productPrice,productImage){
    const el = `
-   <div class="card" data-id="${productID}">
+   <div class="card">
      <img
        src="${productImage}"
        class="card-img-top"
@@ -16,7 +16,7 @@ function indexCards(productID,productName,productDesc,productPrice,productImage)
        <span class="text-danger fs-4">
          <label class="productPrice">${productPrice}</label>T
        </span>
-       <button class="btn btn-success">Add to Cart</button>
+       <button class="btn btn-success" data-id="${productID}">Add to Cart</button>
      </div>
    </div>`;
    return el;

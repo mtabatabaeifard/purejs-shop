@@ -1,8 +1,11 @@
 import productData from "../../data/productData.js";
 import indexCards from "../components/indexCards.js";
+import toast from "../utils/toast.js";
+import handleAddToCart from "./handleAddToCart.js";
+
+const div = document.querySelector("#some-of-products");
 
 function renderMainPageElement() {
-    const div = document.querySelector("#some-of-products");
     const filteredProducts = productData().slice(0, 3);
     filteredProducts.forEach((product) => {
       let card = indexCards(
@@ -16,3 +19,15 @@ function renderMainPageElement() {
     });
   }
 renderMainPageElement();
+
+div.addEventListener('click',(e)=>{
+  if (e.target.innerText == "Add to Cart") {
+    const toastHandleDiv = document.querySelector("#toast-handle");
+    toastHandleDiv.innerHTML+=(toast("alert","added to cart","show"));
+    setTimeout(() => {
+      toastHandleDiv.innerHTML = "";
+    }, 1000);
+    handleAddToCart(e.target.dataset.id);
+  }
+  
+});
