@@ -75,15 +75,15 @@
       </nav>
     </section>
     <section class="mt-5 register-sec col-xs-12 col-sm-6 col-lg-6 mx-auto">
-      <h1 class="mx-auto text-center">Register</h1>
+      <h1 class="mx-auto text-center" id="reg-text">Register</h1>
       <form class="row g-3">
         <div class="col-md-6">
           <label for="inputUserName" class="form-label">Username</label>
-          <input type="text" class="form-control" id="inputUserName" />
+          <input type="text" class="form-control" id="inputUserName" placeholder="Username" />
         </div>
         <div class="col-md-6">
           <label for="inputPassword4" class="form-label">Password</label>
-          <input type="password" class="form-control" id="inputPassword4" />
+          <input type="password" class="form-control" id="inputPassword" />
         </div>
         <div class="col-12">
           <label for="inputAddress" class="form-label">Address</label>
@@ -94,15 +94,7 @@
             placeholder="1234 Main St"
           />
         </div>
-        <div class="col-12">
-          <label for="inputAddress2" class="form-label">Address 2</label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputAddress2"
-            placeholder="Apartment, studio, or floor"
-          />
-        </div>
+
         <div class="col-md-6">
           <label for="inputCity" class="form-label">City</label>
           <input type="text" class="form-control" id="inputCity" />
@@ -118,7 +110,7 @@
         </div>
 
         <div class="col-12">
-          <button type="submit" class="btn btn-primary">Register</button>
+          <button type="submit" class="btn btn-primary" id="register-btn">Register</button>
         </div>
       </form>
     </section>
@@ -146,5 +138,9 @@
         </li>
       </ul>
     </footer>
+    <div id="toast-handle">
+
+    </div>
+    <script type="module" defer async src="./js/handlers/handleRegister.js"></script>
   </body>
 </html>

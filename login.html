@@ -75,12 +75,12 @@
       </nav>
     </section>
     <section class="login-sec col-xs-12 col-sm-6 col-lg-6 mx-auto mt-5">
-      <h1 class="mx-auto text-center">Login</h1>
+      <h1 class="mx-auto text-center login-text">Login</h1>
       <form>
         <div class="row mb-3">
           <label for="inputUser" class="col-sm-2 col-form-label">Username:</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="inputUser" />
+            <input type="text" class="form-control" id="inputUser" placeholder="Username"/>
           </div>
         </div>
         <div class="row mb-3">
@@ -88,10 +88,10 @@
             >Password:</label
           >
           <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" />
+            <input type="password" class="form-control" id="inputPassword" placeholder="Password"/>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Sign in</button>
+        <button type="submit" class="btn btn-primary" id="signin-btn">Sign in</button>
       </form>
     </section>
     <footer class="mt-5 main-footer space-a bg-dark">
@@ -118,5 +118,9 @@
         </li>
       </ul>
     </footer>
+    <div id="toast-handle">
+
+    </div>
+    <script type="module" async defer src="./js/handlers/handleLogin.js"></script>
   </body>
 </html>

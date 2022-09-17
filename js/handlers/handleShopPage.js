@@ -4,6 +4,11 @@ import toast from "../utils/toast.js";
 import handleAddToCart from "./handleAddToCart.js";
 
 const ul = document.querySelector("#shop-ul");
+const loggedInState = localStorage.getItem("logged in") || false;
+const toastHandleDiv = document.querySelector("#toast-handle");
+
+
+
 function renderShopCards() {
   productData().forEach((product) => {
     const cards = shopCards(
@@ -19,14 +24,17 @@ function renderShopCards() {
   renderShopCards();
 
   ul.addEventListener('click',(e)=>{
-    console.log(e.target);
     if (e.target.innerText == "Add To cart") {
-      const toastHandleDiv = document.querySelector("#toast-handle");
-      toastHandleDiv.innerHTML+=(toast("alert","added to cart","show"));
-      setTimeout(() => {
-        toastHandleDiv.innerHTML = "";
-      }, 1000);
-      handleAddToCart(e.target.dataset.id);
+      if(loggedInState === "true") {
+        toastHandleDiv.innerHTML+=(toast("alert","added to cart","show"));
+        setTimeout(() => {
+          toastHandleDiv.innerHTML = "";
+        }, 1000);
+        handleAddToCart(e.target.dataset.id);
+      }
+      else{
+        toastHandleDiv.innerHTML +=toast("error", "please login first to add items to your cart","show");
+      }
     }
     
   });
