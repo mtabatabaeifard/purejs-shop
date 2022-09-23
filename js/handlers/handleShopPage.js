@@ -34,6 +34,9 @@ function renderShopCards() {
       }
       else{
         toastHandleDiv.innerHTML +=toast("error", "please login first to add items to your cart","show");
+        setTimeout(() => {
+          toastHandleDiv.innerHTML = "";
+        }, 1000);
       }
     }
     

@@ -6,8 +6,7 @@ const parsedData = JSON.parse(currentCartItem) || [];
 function handleAddToCart(id) {
   let cart = parsedData;
   const filteredProduct = productData().filter((product) => product.id == id);
-  cart.push(filteredProduct);
+  cart.push(filteredProduct[0]);
   localStorage.setItem("cart", JSON.stringify(cart));
-
 }
 export default handleAddToCart;

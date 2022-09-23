@@ -5,7 +5,8 @@ function productData(){
             name:"test-product-1",
             price:2000,
             desc:"This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.",
-            image:"./images/programming photo.jpg"
+            image:"./images/programming photo.jpg",
+            
             
         },
         {
