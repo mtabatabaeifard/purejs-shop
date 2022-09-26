@@ -6,10 +6,46 @@ import handleAddToCart from "./handleAddToCart.js";
 const ul = document.querySelector("#shop-ul");
 const loggedInState = localStorage.getItem("logged in") || false;
 const toastHandleDiv = document.querySelector("#toast-handle");
+const priceSortLTHButton = document.querySelector("#price-sort-lth");
+const priceSortHTLButton = document.querySelector("#price-sort-htl");
+const priceSortResetButton = document.querySelector("#price-sort-reset");
 
 
 
-function renderShopCards() {
+
+function renderShopCardsByLTHPrice() {
+  // renders shop cards from lower to higher price sorting
+  const sortedProducts = productData().sort((a,b)=>a.price - b.price);
+  sortedProducts.forEach((product) => {
+    const cards = shopCards(
+      product.id,
+      product.name,
+      product.desc,
+      product.price,
+      product.image
+    );
+    ul.innerHTML += cards;
+  });
+}
+
+function renderShopCardsByHTLPrice() {
+  // renders shop cards from higher to lower price sorting
+  const sortedProducts = productData().sort((a,b)=>a.price - b.price).reverse();
+  sortedProducts.forEach((product) => {
+    const cards = shopCards(
+      product.id,
+      product.name,
+      product.desc,
+      product.price,
+      product.image
+    );
+    ul.innerHTML += cards;
+  });
+}
+
+
+function renderShopCardsDefault() {
+  // renders shop cards by default sorting
   productData().forEach((product) => {
     const cards = shopCards(
       product.id,
@@ -21,7 +57,29 @@ function renderShopCards() {
     ul.innerHTML += cards;
   });
 }
-  renderShopCards();
+  renderShopCardsDefault();
+
+
+  priceSortLTHButton.addEventListener("click", ()=>{
+    ul.innerHTML = "";
+    renderShopCardsByLTHPrice();
+  })
+
+
+  priceSortHTLButton.addEventListener("click", ()=>{
+    ul.innerHTML = "";
+    renderShopCardsByHTLPrice();
+  })
+
+
+
+  priceSortResetButton.addEventListener("click", ()=>{
+    ul.innerHTML = "";
+    renderShopCardsDefault();
+  })
+
+
+
 
   ul.addEventListener('click',(e)=>{
     if (e.target.innerText == "Add To cart") {

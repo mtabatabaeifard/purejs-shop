@@ -1,4 +1,4 @@
-function cartItems(productID,productName,productDesc,productPrice,productImage){
+function cartItems(productID,productName,productDesc,productPrice,productImage,productAmount){
     const el = `
     <div class="card mb-3 mx-auto" style="max-width: 1200px">
     <div class="row g-0">
@@ -10,7 +10,7 @@ function cartItems(productID,productName,productDesc,productPrice,productImage){
         />
       </div>
       <div class="col-md-8">
-        <div class="card-body d-flex flex-column align-items-center">
+        <div class="card-body d-flex flex-column align-items-center" data-id ="${productID}">
           <h5 class="card-title">${productName}</h5>
           <p class="card-text text-center">
             Numbers in Cart:
@@ -23,7 +23,8 @@ function cartItems(productID,productName,productDesc,productPrice,productImage){
                 class="form-control w-50"
                 style="border: none; text-align: center"
                 disabled
-                value="1"
+                value="${productAmount}"
+                
               />
               <button class="btn btn-primary">+</button>
             </span>
@@ -31,7 +32,7 @@ function cartItems(productID,productName,productDesc,productPrice,productImage){
           <p class="card-text mt-4">
             <small class="text-muted">price:</small><span>${productPrice}</span>
           </p>
-          <button type="button" class="btn btn-danger" data-id ="${productID}">
+          <button type="button" class="btn btn-danger" data-id ="${productID}" data-action = "deleteProduct">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="16"
