@@ -9,7 +9,7 @@ const zip = document.querySelector("#inputZip");
 const registerButton = document.querySelector("#register-btn");
 const regText = document.querySelector("#reg-text");
 const registerSec = document.querySelector(".register-sec");
-
+let emptyField = false;
 
 
 
@@ -30,26 +30,57 @@ registerButton.addEventListener("click", (e) => {
   if (!userNameInput.value) {
     userNameInput.style.border = "1px solid red";
     regText.innerHTML += `<h5 class="alert-danger">error:username cannot be blank</h5>`;
+    emptyField = true;
+  }else{
+    emptyField = false;
+    city.style.border = "1px solid";
+
   }
   if (!passwordInput.value) {
     passwordInput.style.border = "1px solid red";
     regText.innerHTML += `<h5 class="alert-danger">error:password cannot be blank</h5>`;
+    emptyField = true;
+  }else{
+    emptyField = false;
+    city.style.border = "1px solid";
+
   }
   if (!address.value) {
     address.style.border = "1px solid red";
     regText.innerHTML += `<h5 class="alert-danger">error:address cannot be blank</h5>`;
+    emptyField = true;
+  }else{
+    emptyField = false;
+    city.style.border = "1px solid";
+
   }
   if (!city.value) {
     city.style.border = "1px solid red";
     regText.innerHTML += `<h5 class="alert-danger">error:city cannot be blank</h5>`;
+    emptyField = true;
+  }else{
+    city.style.border = "1px solid";
+    emptyField = false;
+
+
   }
   if (!state.value) {
     state.style.border = "1px solid red";
     regText.innerHTML += `<h5 class="alert-danger">error:state cannot be blank</h5>`;
+    emptyField = true;
+  }else{
+    emptyField = false;
+    city.style.border = "1px solid";
+
   }
   if (!zip.value) {
     zip.style.border = "1px solid red";
     regText.innerHTML += `<h5 class="alert-danger">error:zip cannot be blank</h5>`;
+    emptyField = true;
+  }else{
+    emptyField = false;
+    city.style.border = "1px solid";
+
   }
   const usersDataBase = localStorage.getItem("usersDataBase");
   const parsedUserDataBase = JSON.parse(usersDataBase) || [];
@@ -65,7 +96,7 @@ registerButton.addEventListener("click", (e) => {
       duplicatedUserName = false;
     }
   });
-  if (duplicatedUserName == false) {
+  if (duplicatedUserName == false && emptyField== false) {
     const userDetails = {
       username: userNameInput.value,
       password: passwordInput.value,

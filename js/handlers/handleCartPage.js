@@ -104,6 +104,6 @@ finalPrice.innerHTML = `TotalPrice:${totalFinalPrice}T
 finalPrice.addEventListener("click", (e) =>{
     const finalPriceInRials = totalFinalPrice * 10;
     if (e.target.innerText == "purchase"){
-       location.href=`https://idpay.ir/mtabatabaeifard/${finalPriceInRials}`
+       location.href=`https://idpay.ir/motabatabaei/${finalPriceInRials}`
     }
 })
