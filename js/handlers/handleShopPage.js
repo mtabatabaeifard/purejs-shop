@@ -9,8 +9,25 @@ const toastHandleDiv = document.querySelector("#toast-handle");
 const priceSortLTHButton = document.querySelector("#price-sort-lth");
 const priceSortHTLButton = document.querySelector("#price-sort-htl");
 const priceSortResetButton = document.querySelector("#price-sort-reset");
-
-
+const searchBtn = document.querySelector("#search-btn");
+const searchInput = document.querySelector("#search-input");
+searchBtn.addEventListener("click",(e)=>{
+  e.preventDefault();
+  productData().map((product)=>{
+    if (product.name == searchInput.value) {
+      ul.innerHTML ="";
+      const cards = shopCards(
+        product.id,
+        product.name,
+        product.desc,
+        product.price,
+        product.image
+      );
+      ul.innerHTML += cards;
+    }
+    
+  })
+})
 
 
 function renderShopCardsByLTHPrice() {
